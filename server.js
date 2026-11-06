@@ -4,8 +4,8 @@ const path = require("path");
 const crypto = require("crypto");
 const { MongoClient, ObjectId } = require("mongodb");
 
-const PORT = 3000;
-const MONGODB_URI = "mongodb://127.0.0.1:27017";
+   const PORT = process.env.PORT || 3000;
+   const MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017";
 const client = new MongoClient(MONGODB_URI);
 let db;
 const sessions = new Map();
